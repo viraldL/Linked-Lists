@@ -135,14 +135,63 @@ class LinkedList {
             return str.slice(0, -4);
         }
     }
+
+    insertAt(value, index) {
+        let node = new Node(value);
+        let i = 0;
+        if(index > this.size()) return "Invalid index.";
+
+        if(index === 0) {
+            node.next = this.head;
+            this.head = node;
+        } else {
+            let current = this.head;
+            let previous;
+            while(i < index) {
+                previous = current;
+                current = current.next;
+                i++;
+            }
+            node.next = current;
+            previous.next = node;
+        }
+    }
+
+    removeAt(index) {
+        let i = 0;
+        let current = this.head;
+        let previous = null;
+        if(current !== null){
+            while(current.next){
+                if(i == index){
+                    if(previous !== null){
+                        let temp = current.next;
+                        previous.next = temp;
+                        break;
+                    } else {
+                        let temp = current.next;
+                        this.head = temp;
+                    }
+                }
+                i++;
+                previous = current;
+                current = current.next;
+            }
+            if(current.next == null) {
+                previous.next = null;
+            }
+        } else {
+            return "The list is empty."
+        }
+    }
 }
 
-const list = new LinkedList;
-list.append("10");
-list.append("20");
-list.append("30");
-list.append("40");
-list.append("50");
-list.prepend("0");
-console.log(list);
+// const list = new LinkedList;
+// list.append("10");
+// list.append("20");
+// list.append("30");
+// list.append("40");
+// list.append("50");
+// list.prepend("0");
+// console.log(list);
 

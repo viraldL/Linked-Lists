@@ -189,12 +189,12 @@ class LinkedList {
     }
 }
 
-const list = new LinkedList;
-list.append("10");
-list.append("20");
-list.append("40");
-list.append("50");
-list.prepend("0");
-console.log(list);
-console.log(list.toString());
+// const list = new LinkedList;
+// list.append("10");
+// list.append("20");
+// list.append("40");
+// list.append("50");
+// list.prepend("0");
+// console.log(list);
+// console.log(list.toString());
 

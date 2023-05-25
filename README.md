@@ -12,3 +12,5 @@ Linked List methods:
 - `toString` represents your LinkedList objects as stringse. The format is: **( value ) -> ( value ) -> ( value )**
 - `insertAt(value, index)` that inserts a new node with the provided value at the given index.
 - `removeAt(index)` that removes the node at the given index.
+
+***TODO: Update toString format***

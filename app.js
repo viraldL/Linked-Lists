@@ -132,7 +132,10 @@ class LinkedList {
                 current = current.next;
                 str += `${current.value} -> `
             }
-            return str.slice(0, -4);
+            if(current.next == null){
+                str += `null`
+            }
+            return str;
         }
     }
 
@@ -186,12 +189,12 @@ class LinkedList {
     }
 }
 
-// const list = new LinkedList;
-// list.append("10");
-// list.append("20");
-// list.append("30");
-// list.append("40");
-// list.append("50");
-// list.prepend("0");
-// console.log(list);
+const list = new LinkedList;
+list.append("10");
+list.append("20");
+list.append("40");
+list.append("50");
+list.prepend("0");
+console.log(list);
+console.log(list.toString());
 
